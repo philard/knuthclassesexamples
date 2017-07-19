@@ -1,4 +1,4 @@
-package phil.study.cleancode.listing10_6.literatePrimes;
+package phil.study.cleancode.literatePrimes.v2;
 
 import java.util.ArrayList;
 
@@ -8,7 +8,7 @@ public class PrimeGenerator {
 
     protected static int[] generate(int n) {
         primes = new int[n];
-        multiplesOfPrimeFactors = new ArrayList<>();
+        multiplesOfPrimeFactors = new ArrayList<Integer>();
         set2AsFirstPrime();
         checkOddNumbersForSubsequentPrimes();
         return primes;

@@ -1,4 +1,4 @@
-package phil.study.cleancode.listing10_6.literatePrimes;
+package phil.study.cleancode.literatePrimes.v2;
 
 import java.io.PrintStream;
 
@@ -12,17 +12,19 @@ public class RowColumnPagePrinter {
     public RowColumnPagePrinter(int rowsPerPage,
                                 int columnsPerPage,
                                 String pageHeader) {
-        this.rowsPerPage = rowsPerPage;
-        this.columnsPerPage = columnsPerPage;
-        this.pageHeader = pageHeader;
-        numbersPerPage = rowsPerPage * columnsPerPage;
+        setUpInstance(rowsPerPage, columnsPerPage, pageHeader);
         printStream = System.out;
+    }
+
+    public RowColumnPagePrinter(int rowsPerPage, int columnsPerPage, String pageHeader, PrintStream printStream) {
+        setUpInstance(rowsPerPage, columnsPerPage, pageHeader);
+        this.printStream = printStream;
     }
 
     public void print(int data[]) {
         int pageNumber = 1;
         for (int firstIndexOnPage = 0;
-             firstIndexOnPage < data.length;
+             data != null && firstIndexOnPage < data.length;
              firstIndexOnPage += numbersPerPage) {
             int lastIndexOnPage =
                     Math.min(firstIndexOnPage + numbersPerPage - 1,
@@ -34,6 +36,12 @@ public class RowColumnPagePrinter {
         }
     }
 
+    private void setUpInstance(int rowsPerPage, int columnsPerPage, String pageHeader) {
+        this.rowsPerPage = rowsPerPage;
+        this.columnsPerPage = columnsPerPage;
+        this.pageHeader = pageHeader;
+        numbersPerPage = rowsPerPage * columnsPerPage;
+    }
     private void printPage(int firstIndexOnPage,
                            int lastIndexOnPage,
                            int[] data) {

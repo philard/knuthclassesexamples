@@ -1,4 +1,4 @@
-package phil.study.cleancode.listing10_5.literatePrimes;
+package phil.study.cleancode.literatePrimes.v1;
 
 public class PrintPrimes {
     public static void main(String[] args) {

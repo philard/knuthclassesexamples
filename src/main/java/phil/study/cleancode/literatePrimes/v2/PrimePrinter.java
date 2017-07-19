@@ -1,4 +1,5 @@
-package phil.study.cleancode.listing10_6.literatePrimes;
+package phil.study.cleancode.literatePrimes.v2;
+
 public class PrimePrinter {
     public static void main(String[] args) {
         final int NUMBER_OF_PRIMES = 1000;
